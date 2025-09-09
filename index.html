@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Blog</title>
+    <style>
+        body {}
+
+        header {
+
+            text-align: center;
+        }
+
+        #logo {
+            height: 50px;
+        }
+
+        #nav {
+            height: 100%;
+            width: 100%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: blue;
+        }
+
+        button {position: relative;
+            overflow: hidden;
+            transition-duration: 0.4s;
+            padding: 10px;
+            text-shadow: 100px solid rgba(0, 0, 0, 0.342);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .home{
+        
+  background-color: rgb(219, 221, 219);
+  transition: transform .2s; /* Animation */
+  width: 100px;
+  height: 100px;
+ 
+        }
+
+        .home:hover {
+            border: 10px;
+            background-color: azure;
+            box-shadow: 10px solid black;
+        }
+
+        #banner {height: 10%;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: crimson;
+            text-shadow: 10px solid white;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: crimson;
+            font-weight: 900 bold;
+            text-shadow: 10px solid white;
+        }
+        .ripple{ transform: scale(0s);
+            opacity: 0;
+            position: absolute;
+            transition: tramsform 1s  ease-out, opacity 1s ease-out;
+        }
+        .ripple.active{
+            transform: scale(0s);
+            opacity: 0;
+            animation:fadeOutRipple 0.5s forwards;
+        }
+        #blog1{
+           height: 200px;
+        }
+        #categories{border: 10px;
+            border-radius: 50%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <img id="logo" src="images.png" alt="Logo"><br>
+    <form action="index.html"></form>
+    <header>
+        <div id="nav">
+
+            <button class="home"><a href="index.html">Home<span class="ripple"></span> </a></button>
+            <button class="home"> <a href="blog.html">Blog</a><span class="ripple"></span></button>
+            <button class="home"> <a href="categories.html">Categories</a><span class="ripple"></span></button>
+            <button class="home"> <a href="about.html">About</a><span class="ripple"></span></button>
+            <button class="home"> <a href="contact.html">Contact</a><span class="ripple"></span></button>
+
+
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1> Web Development</h1>
+            <h2>Learning</h2>
+            <img id="banner" src="banner3.jpg">
+        </div>
+        <div id="blogs"> <marquee>
+            <button> <img id="blog1" src="pexels-jessbaileydesign-965117.jpg"><a href="page.html">2025</a></button>
+        <button> <img id="blog1" src="jess-bailey-q10VITrVYUM-unsplash.jpg" ><a href="page.html">2024</a></button>
+    <button> <img id="blog1" src="andrew-neel-cckf4TsHAuw-unsplash.jpg" ><a href="page.html"></a>2023</button>
+    <button> <img id="blog1" src="arnel-hasanovic-MNd-Rka1o0Q-unsplash.jpg"  ><a href="page.html">2022</a></button></marquee>
+        </div><br>
+        <div id="categories">    <button >
+            <caption>News</caption> 
+          </button>
+        <button><caption>Lifestyle</caption> </button>
+        <button><caption>Professional</caption></button>
+        <button><caption>Outdoor</caption></button>
+        </div>
+    
+   <div style="align-items: center;
+        padding: 10px;
+        text-shadow: 100px solid rgba(0, 0, 0, 0.342);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> Name:<input type="text" name="fname">
+       Email: <input type="email" name="email"><br>
+    <input type="submit" value="Subscribe"></div>
+    <div id="about">
+
+    </div>
+</main>
+
+<footer><img style="width: 1400px;" src="v915-techi-025-l.jpg"></footer>
+ 
+
+</body>
+
+</html>

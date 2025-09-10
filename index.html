@@ -4,140 +4,248 @@
 <head>
     <title>Blog</title>
     <style>
-        body {}
-
-        header {
-
-            text-align: center;
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #333;
         }
 
-        #logo {
-            height: 50px;
+        /* Navbar */
+        header {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            padding: 15px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
 
         #nav {
-            height: 100%;
-            width: 100%;
-            display: inline-flex;
+            display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 10px;
-            background-color: blue;
+            gap: 20px;
         }
 
-        button {position: relative;
-            overflow: hidden;
-            transition-duration: 0.4s;
-            padding: 10px;
-            text-shadow: 100px solid rgba(0, 0, 0, 0.342);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        .home{
-        
-  background-color: rgb(219, 221, 219);
-  transition: transform .2s; /* Animation */
-  width: 100px;
-  height: 100px;
- 
+        #nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
 
-        .home:hover {
-            border: 10px;
-            background-color: azure;
-            box-shadow: 10px solid black;
+        #nav a:hover {
+            background: white;
+            color: #007bff;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        #banner {height: 10%;
+        /* Banner */
+        #banner {
             width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            margin: 10px 0;
         }
 
         h1 {
-            text-align: center;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             color: crimson;
-            text-shadow: 10px solid white;
+            font-size: 2.5rem;
         }
 
         h2 {
-            text-align: center;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: crimson;
-            font-weight: 900 bold;
-            text-shadow: 10px solid white;
+            color: #333;
+            font-size: 1.5rem;
         }
-        .ripple{ transform: scale(0s);
-            opacity: 0;
-            position: absolute;
-            transition: tramsform 1s  ease-out, opacity 1s ease-out;
-        }
-        .ripple.active{
-            transform: scale(0s);
-            opacity: 0;
-            animation:fadeOutRipple 0.5s forwards;
-        }
-        #blog1{
-           height: 200px;
-        }
-        #categories{border: 10px;
-            border-radius: 50%;
-            height: 100px;
+
+        /* Blog cards */
+        #blogs {
             display: flex;
             justify-content: center;
-            align-items:center ;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
         }
-        
+
+        .blog-card {
+            width: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .blog-card a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Categories */
+        #categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .cat-btn {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #007bff;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cat-btn:hover {
+            background: #0056b3;
+            transform: scale(1.15);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Subscribe Form */
+        #subscribe {
+            text-align: center;
+            padding: 30px;
+        }
+
+        #subscribe input[type="text"],
+        #subscribe input[type="email"] {
+            padding: 10px;
+            margin: 10px;
+            width: 250px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: border 0.3s;
+        }
+
+        #subscribe input:focus {
+            border: 2px solid #007bff;
+            outline: none;
+        }
+
+        #subscribe input[type="submit"] {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        #subscribe input[type="submit"]:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        footer img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            opacity: 0.8;
+        }
     </style>
 </head>
 
 <body>
-    <img id="logo" src="images.png" alt="Logo"><br>
-    <form action="index.html"></form>
     <header>
         <div id="nav">
-
-            <button class="home"><a href="index.html">Home<span class="ripple"></span> </a></button>
-            <button class="home"> <a href="blog.html">Blog</a><span class="ripple"></span></button>
-            <button class="home"> <a href="categories.html">Categories</a><span class="ripple"></span></button>
-            <button class="home"> <a href="about.html">About</a><span class="ripple"></span></button>
-            <button class="home"> <a href="contact.html">Contact</a><span class="ripple"></span></button>
-
-
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="categories.html">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </div>
     </header>
+
     <main>
         <div>
-            <h1> Web Development</h1>
+            <h1>Web Development</h1>
             <h2>Learning</h2>
-            <img id="banner" src="banner3.jpg">
+            <img id="banner" src="nasa-Q1p7bh3SHj8-unsplash.jpg" alt="Banner">
         </div>
-        <div id="blogs"> <marquee>
-            <button> <img id="blog1" src="pexels-jessbaileydesign-965117.jpg"><a href="page.html">2025</a></button>
-        <button> <img id="blog1" src="jess-bailey-q10VITrVYUM-unsplash.jpg" ><a href="page.html">2024</a></button>
-    <button> <img id="blog1" src="andrew-neel-cckf4TsHAuw-unsplash.jpg" ><a href="page.html"></a>2023</button>
-    <button> <img id="blog1" src="arnel-hasanovic-MNd-Rka1o0Q-unsplash.jpg"  ><a href="page.html">2022</a></button></marquee>
-        </div><br>
-        <div id="categories">    <button >
-            <caption>News</caption> 
-          </button>
-        <button><caption>Lifestyle</caption> </button>
-        <button><caption>Professional</caption></button>
-        <button><caption>Outdoor</caption></button>
+
+        <div id="blogs">
+            <div class="blog-card">
+                <img src="pexels-jessbaileydesign-965117.jpg" alt="2025">
+                <a href="page.html">2025</a>
+            </div>
+            <div class="blog-card">
+                <img src="jess-bailey-q10VITrVYUM-unsplash.jpg" alt="2024">
+                <a href="page.html">2024</a>
+            </div>
+            <div class="blog-card">
+                <img src="andrew-neel-cckf4TsHAuw-unsplash.jpg" alt="2023">
+                <a href="page.html">2023</a>
+            </div>
+            <div class="blog-card">
+                <img src="arnel-hasanovic-MNd-Rka1o0Q-unsplash.jpg" alt="2022">
+                <a href="page.html">2022</a>
+            </div>
         </div>
-    
-   <div style="align-items: center;
-        padding: 10px;
-        text-shadow: 100px solid rgba(0, 0, 0, 0.342);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> Name:<input type="text" name="fname">
-       Email: <input type="email" name="email"><br>
-    <input type="submit" value="Subscribe"></div>
-    <div id="about">
 
-    </div>
-</main>
+        <div id="categories">
+            <button class="cat-btn">News</button>
+            <button class="cat-btn">Lifestyle</button>
+            <button class="cat-btn">Professional</button>
+            <button class="cat-btn">Outdoor</button>
+        </div>
 
-<footer><img style="width: 1400px;" src="v915-techi-025-l.jpg"></footer>
- 
+        <div id="subscribe">
+            <h2>Subscribe to Our Newsletter</h2>
+            <input type="text" name="fname" placeholder="Your Name">
+            <input type="email" name="email" placeholder="Your Email"><br>
+            <input type="submit" value="Subscribe">
+        </div>
+    </main>
 
+    <footer>
+        <img src="shapelined-_JBKdviweXI-unsplash.jpg" alt="Footer Banner">
+    </footer>
 </body>
 
 </html>
